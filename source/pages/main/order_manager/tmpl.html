@@ -1,0 +1,30 @@
+<div class="main">
+    <div class="list">
+        <table class="table table-bordered tc pf14">
+            <tr>
+                <th>订单编号</th>
+                <th>商品信息</th>
+                <th>用户信息</th>
+                <th>下单时间</th>
+                <th>支付金额</th>
+                <th>订单状态</th>
+            </tr>
+            <tr ng-repeat="item in vm.order">
+                <td>{{item.appTradeNo}}</td>
+                <td>{{item.productName}}<br> {{item.totalFee/100|currency:'¥'}}</td>
+                <td class="tl">昵称：{{!item.nickName?item.cloudpId:item.nickName}}<br>电信通号：{{item.cloudpId}}<br> 手机号：{{item.mobile}}</td>
+                <td>{{item.updateTime | date:'yyyy-MM-dd'}} <br> {{item.updateTime | date:'hh:mm:ss'}}</td>
+                <td>{{item.totalFee/100 | currency:'¥'}}</td>
+                <td>{{item.tradeStatus==1?'已支付':'未支付'}}</td>
+            </tr>
+        </table>
+        <div class="paging">
+            <span class="before page-common" ng-click="vm.prevPage()" ng-class="{1:'bg'}[vm.params.page]">＜</span>
+            <ul></ul>
+            <ul ng-repeat="item in vm.pager">
+                <li class="pageNum page-common" ui-sref="main.order-manager({page:item.value})" ng-class="{true:'current',false:'normal'}[item.isCurrent]">{{item.type==0?item.value:'...'}}</li>
+            </ul>
+            <span class="after page-common" ng-click="vm.nextPage()" ng-class="{'bg':vm.params.page==vm.total}">＞</span>
+        </div>
+    </div>
+</div>

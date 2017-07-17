@@ -1,0 +1,43 @@
+<div class="wrap">
+    <div class="header">
+        <div class="content">
+            <div class="logoPic"></div>
+            <span class="name">商户平台</span>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="logoPage">
+            <div class="erweima"></div>
+            <div class="login">
+                <!--<form  autocomplete="on">-->
+                <div class="loginTitle pf22">
+                    <div class="commercial w50 active" ui-sref="login.bussiness-manager" >商户管理</div>
+                    <div class="videoService w50" roleType="2"><a href="../">视频客服</a></div>
+                </div>
+                <div class="toolTips" ng-bind="vm.errorMsg" ng-class="{true:'opacity1',false:'opacity0'}[vm.isFailed()]">
+                </div>
+                <div class="userBox">
+                    <input  type="text" name="username" autocomplete="on" class="number formCommon pf18" ng-model="vm.username" placeholder="账号">
+                </div>
+                <div class="passBox">
+                    <input  type="password" name="password" autocomplete="on" class="password formCommon pf18" ng-model="vm.password" placeholder="密码">
+                </div>
+
+                    <!--<p class="remeber pf18a">记住账号</p>-->
+                    <input type="submit" class="logoinBtn  pf-submit" ng-click="vm.login()" ng-value="vm.loginText" ng-class="{false:'opacity1',true:'opacity2'}[vm.isLogin]">
+                <!--</form>-->
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="info pf-info">
+            <div class="mail">咨询邮箱：lulutone@btte.net</div>
+            <div class="tel">咨询电话：4007715151</div>
+            <div class="custom">客服电信通号：12345</div>
+            <div class="official">电信通官网：lulutone.com</div>
+        </div>
+        <div class="copyright pf14">
+            鹏博士电信传媒集团&nbsp;&nbsp;版权所有&nbsp;&nbsp;京ICP备10212496号-5
+        </div>
+    </div>
+</div>

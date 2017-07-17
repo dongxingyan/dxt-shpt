@@ -1,0 +1,128 @@
+
+<div class="screen">
+    <div class="bomb-sure" ng-show="vm.visible">
+        <div class="bomb-content" style="">
+            <div class="bomb-top">
+                <div class="bomb-title">
+                    <span class="bomb-close" ng-click="vm.close()"></span>
+                </div>
+            </div>
+            <table class="bomb-table">
+                <tr>
+                    <td>商品名称</td>
+                    <td>{{vm.ticketInfo.productName}}</td>
+                </tr>
+                <tr>
+                    <td>消费码</td>
+                    <td>{{vm.vCode}}</td>
+                </tr>
+                <tr>
+                    <td>价格</td>
+                    <td>{{vm.ticketInfo.totalFee/100| currency : "¥"}}</td>
+                </tr>
+                <tr>
+                    <td>状态</td>
+                    <td>{{vm.ticketInfo.tradeStatus==1?'有效':'无效'}}</td>
+                </tr>
+            </table>
+            <input type="submit" value="确定" class="bomb-submit" ng-click="vm.sure()">
+        </div>
+    </div>
+    <div class="bomb-used" ng-show="vm.visible1">
+        <div class="bomb-content" style="">
+            <div class="bomb-top">
+                <div class="bomb-title">
+                    <span class="bomb-close" ng-click="vm.close()"></span>
+                    该券已被消费
+                </div>
+            </div>
+            <table class="bomb-table">
+                <tr>
+                    <td>商品名称</td>
+                    <td>{{vm.ticketInfo.productName}}</td>
+                </tr>
+                <tr>
+                    <td>消费码</td>
+                    <td>{{vm.vCode}}</td>
+                </tr>
+                <tr>
+                    <td>价格</td>
+                    <td>{{vm.ticketInfo.totalFee/100| currency : "¥"}}</td>
+                </tr>
+                <tr>
+                    <td>消费时间</td>
+                    <td>{{vm.ticketInfo.updateTime|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <div class="bomb-sucessful" ng-show="vm.visible2">
+        <div class="bomb-content" style="">
+            <div class="bomb-top">
+                <div class="bomb-title">
+                    <span class="bomb-close" ng-click="vm.close1()"></span>
+                </div>
+            </div>
+            <div class="bomb-middle">
+                <div class="sucessful-Pic"></div>
+                <div class="sucessful-text">验证成功</div>
+            </div>
+        </div>
+    </div>
+    <div class="bomb-error" ng-show="vm.visible3">
+        <div class="bomb-content" style="">
+            <div class="bomb-top">
+                <div class="bomb-title">
+                    <span class="bomb-close" ng-click="vm.close()"></span>
+                </div>
+            </div>
+            <div class="bomb-middle">
+                <div class="error-Pic"></div>
+                <div class="error-text">券号输入错误，请重新输入</div>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+
+        <div class="tips">
+            请确保当天的消费务必在当天完成验证，延迟验证导致的退款将无法结款！
+        </div>
+        <div class="please">请输入消费劵号</div>
+        <div class="ticket">
+            <input ng-model="vm.vCode" type="text" placeholder="12位消费券号" class="ticket-number" ng-keyup="vm.format()">
+            <i class="clear-value" ng-click="vm.clear()"></i>
+            <input type="button" value="验证" class="validate" ng-click="vm.validate()">
+        </div>
+
+        <div class="record">
+            <table class="table table-bordered tc pf14">
+                <tr>
+                    <th colspan="5">验证记录</th>
+                </tr>
+                <tr>
+                    <td>商品名称</td>
+                    <td>消费码</td>
+                    <td>购买价格</td>
+                    <td>消费时间</td>
+                    <td>验证账号</td>
+                </tr>
+                <tr ng-repeat="item in vm.info">
+                    <td>{{item.productName}}</td>
+                    <td>{{item.verificationCode}}</td>
+                    <td>{{item.totalFee/100|currency:'¥'}}</td>
+                    <td>{{item.updateTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>{{item.backendUserName}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="paging">
+            <span class="before page-common" ng-click="vm.prevPage()" ng-class="{1:'bg'}[vm.params.page]">＜</span>
+            <ul></ul>
+            <ul ng-repeat="item in vm.pager">
+                <li class="pageNum page-common" ui-sref="main.account({page:item.value})" ng-class="{true:'current',false:'normal'}[item.isCurrent]">{{item.type==0?item.value:'...'}}</li>
+            </ul>
+            <span class="after page-common" ng-click="vm.nextPage()" ng-class="{'bg':vm.params.page==vm.total}">＞</span>
+        </div>
+    </div>
+</div>

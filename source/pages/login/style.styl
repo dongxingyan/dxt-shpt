@@ -1,0 +1,257 @@
+login {
+  a {
+    text-decoration: none;
+    color: rgb(43, 50, 69);
+  }
+  .w50 {
+    width: 50%
+  }
+  .active {
+    border-bottom: 3px solid #23d1e3;
+  }
+  .pf22 {
+    font-size: 22px;
+    font-family: "PingFang SC";
+    color: rgb(43, 50, 69);
+    line-height: 1;
+  }
+  .pf18 {
+    font-size: 18px;
+    font-family: "PingFang SC";
+    color: rgb(153, 158, 163);
+  }
+  .pf18a {
+    font-size: 18px;
+    font-family: "PingFang SC";
+    color: rgb(43, 50, 69);
+  }
+  .pf-submit {
+    font-size: 22px;
+    font-family: "PingFang SC";
+    color: rgb(255, 255, 255);
+  }
+
+  .pf-info {
+    font-size: 17px;
+    font-family: "PingFang SC";
+    color: rgb(114, 127, 162);
+  }
+  .pf14 {
+    font-size: 14px;
+    font-family: "PingFang SC";
+    color: rgb(94, 105, 134);
+  }
+  .opacity0 {
+    opacity 0
+  }
+  .opacity1 {
+    opacity 1
+  }
+  .opacity2 {
+    opacity 0.6
+  }
+  .wrap {
+    width: 100%;
+    height: 100%;
+    display flex;
+    flex-direction column;
+  }
+  .header {
+    width: 100%
+    height: 80px;
+    background-color: #2b3245;
+    display flex;
+    justify-content center;
+    color #fff;
+    .content {
+      width: 1200px
+      height: 100%;
+      line-height: 100%;
+      display flex;
+      padding-left: 38px;
+      align-items center
+
+      .logoPic {
+        width: 140px
+        height: 100%
+        background: url("../../static/images/dxtLogo.png") left center no-repeat;
+        background-size 100%;
+        margin-right: 30px;
+      }
+      .name {
+        font-size: 22px;
+        font-family: "PingFang SC";
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        height: 30px
+        padding-left: 30px;
+        border-left: 1px solid #4e5978;
+      }
+
+    }
+  }
+  .middle {
+    overflow hidden
+    flex 1;
+    background-color: #1b90b3;
+    display flex;
+    justify-content center;
+    align-items: center;
+    .logoPage {
+      width: 1200px
+      height: 100%;
+      display flex;
+      align-items center;
+      justify-content space-around;
+      .erweima {
+        width: 640px;
+        height: 385px;
+        background: url(../../static/images/erweima.png) left top no-repeat;
+        background-size 100%;
+      }
+      .login {
+        width: 340px
+        height: 370px
+        background white;
+        padding: 0 25px;
+        border-radius 5px;
+        .loginTitle {
+          width: 290px
+          height: 40px;
+          line-height: 40px
+          margin-top: 30px;
+          display: flex
+          justify-content: space-around
+          text-align center
+          border-bottom: 1px solid #ccc;
+          cursor pointer
+          a {
+            text-decoration none;
+          }
+          a:hover {
+            color: rgb(43, 50, 69);
+          }
+        }
+        .toolTips {
+          height: 25px
+          line-height: 25px
+          margin: 5px 0
+          padding-left: 50px
+          background #fec7c8
+          font-size: 14px;
+          font-family: "PingFang SC";
+          color: rgb(252, 71, 74);
+          position: relative
+        }
+        .toolTips::before {
+          content url("../../static/images/warnIcon.png")
+          display: block
+          position absolute
+          left: 15px
+          top: 3px
+          width: 20px
+          height: 20px
+          background-size 100%
+        }
+
+        .userBox {
+          position: relative;
+        }
+          .passBox{
+            position: relative
+          }
+        .userBox::before {
+          content: url("../../static/images/number.png")
+          position absolute;
+          display inline-block;
+          width: 20px
+          height: 20px
+          left: 15px;
+          top: 12px;
+        }
+          .passBox::before{
+            content: url("../../static/images/password.png")
+            position absolute;
+            display inline-block;
+            width: 20px
+            height: 20px
+            left: 15px;
+            top: 12px;
+          }
+        /*.remeber {
+          padding-left: 30px;
+          height: 40px
+          line-height: 40px
+          position relative
+        }
+        .remeber::before {
+          content ''
+          position absolute;
+          display inline-block;
+          width: 20px
+          height: 20px;
+          border: 1px solid #ccc
+          border-radius: 50%;
+          left 0;
+          top: 10px;
+        }*/
+        .logoinBtn {
+          width: 290px;
+          height: 46px
+          background #23d1e3;
+          border: none;
+          margin-top: 30px;
+          border-radius 5px;
+          color #fff;
+          cursor pointer
+        }
+      }
+    }
+  }
+  .bottom {
+    height: 90px;
+    background: #2b3245
+    color #727fa2;
+    .info {
+      display: flex
+      width: 1200px
+      height: 60px
+      margin: 0 auto;
+      padding: 0 90px;
+      line-height: 60px;
+      justify-content space-between
+    }
+    .mail {
+      background url("../../static/images/mail.png") left center no-repeat;
+      padding-left: 40px;
+    }
+    .tel {
+      background url("../../static/images/tel.png") left center no-repeat;
+      padding-left: 40px;
+    }
+    .custom {
+      background url("../../static/images/custom.png") left center no-repeat;
+      padding-left: 40px;
+    }
+    .official {
+      background url("../../static/images/official.png") left center no-repeat;
+      padding-left: 40px;
+    }
+    .copyright {
+      border-top 1px solid #242a3a;
+      height: 35px
+      line-height: 35px
+      text-align center
+    }
+  }
+  .formCommon {
+    height: 50px
+    width: 290px
+    padding-left: 50px;
+    margin-bottom: 15px;
+    outline none;
+    color: #999;
+    border: 1px solid #ccc
+    border-radius 5px
+  }
+}

@@ -1,0 +1,29 @@
+<div class="wrap">
+    <div class="header">
+        <div class="content">
+            <div class="header-left">
+                <div class="logoPic"></div>
+                <span class="name pf22">商户平台</span>
+            </div>
+            <div class="header-right">
+                <div class="userName pf16">
+                    {{vm.userName}}
+                    <div class="exit" ng-click="vm.signout()">退出当前账号</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="contain">
+            <div class="nav pf20">
+                <div class="consume" ui-sref="main.account({page:1})" ng-class="{active:vm.isActive('main.account')}">
+                    验证消费管理
+                </div>
+                <div class="order" ng-class="{active:vm.isActive('main.order-manager')}" ui-sref="main.order-manager({page:1})">订单管理</div>
+            </div>
+            <ui-view>
+            </ui-view>
+        </div>
+    </div>
+</div>
+</div>
